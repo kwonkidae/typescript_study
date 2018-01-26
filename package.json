@@ -1,0 +1,26 @@
+{
+  "name": "typescript_study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "variable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwonkidae/typescript_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwonkidae/typescript_study/issues"
+  },
+  "homepage": "https://github.com/kwonkidae/typescript_study#readme",
+  "dependencies": {
+    "inversify": "^4.9.0",
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^9.3.0"
+  }
+}

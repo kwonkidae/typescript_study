@@ -29,7 +29,6 @@ function warnUser(): void {
 }
 
 let unusable: void = undefined;
-let num: number = null;
 
 function error(message: string): never {
     throw new Error(message);
