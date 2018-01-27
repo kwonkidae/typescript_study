@@ -89,13 +89,13 @@ try {
 _a++;
 var _a: number;
 console.log(_a);
-
+let a2;
 function foo() {
     return a2;
 }
 
 foo();
-let a2;
+
 
 console.log(foo());
 
@@ -155,3 +155,101 @@ function theCityThatAlwaysSleeps() {
 }
 
 console.log(theCityThatAlwaysSleeps());
+
+for (let i = 0; i < 10; i++) {
+	// setTimeout(function() { console.log(i); }, 100 * i);
+}
+
+const numLivesForCat = 9;
+const kitty = {
+	name: "Aurora",
+	numLives: numLivesForCat,
+}
+
+// TS2540: Cannot assign to 'kitty' because it is a constant or a read-only property.
+// kitty = {
+// 	name: "Danielle",
+// 	numLives: numLivesForCat,
+// }
+
+kitty.name = "Rory";
+kitty.name = "Kitty";
+kitty.numLives--;
+
+console.log(kitty);
+
+let input = [1, 2];
+let [first, second] = input;
+
+[first, second] = [second, first];
+
+console.log(first, second);
+
+function _f1([first, second]: [number, number]) {
+	console.log(first);
+	console.log(second);
+}
+
+_f1([1,2]);
+
+let [_first, ..._rest] = [1,2,3,4];
+console.log(_first);
+console.log(_rest);
+
+[first] = [1,2,3,4];
+console.log(first);
+
+let o = {
+	a: "foo",
+	b: 12,
+	c: "bar",
+};
+
+{
+	let {a, b} = o;
+	console.log(a, b);
+
+	({a, b} = {a: "baz", b: 101});
+	{
+		let {a: newName1, b: newName2} = o;
+
+		console.log(a, b);
+	}
+}
+
+{
+	let { a, ...passthrough} = o;
+	let total = passthrough.b + passthrough.c.length;
+	console.log(total);
+}
+
+{
+	let {a, b}: {a: string, b: number} = o;
+}
+
+// var kkd = Symbol("kkdosk");
+// console.log(kkd);
+
+type C = { a: string, b? :number }
+function _f11({a, b} : C): void {
+
+}
+
+function f10({ a, b } = { a: "", b: 0}): void {
+	console.log(a, b);
+}
+
+f10();
+
+class C1 {
+	p = 12;
+	public m(): void {
+
+	}
+}
+
+let c1 = new C1();
+let clone = { ...c1 };
+
+console.log(clone.p);
+// console.log(clone.m())
